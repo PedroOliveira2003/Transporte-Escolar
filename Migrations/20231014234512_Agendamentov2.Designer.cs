@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Transporte.Models;
 
@@ -11,9 +12,11 @@ using Transporte.Models;
 namespace Transporte.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20231014234512_Agendamentov2")]
+    partial class Agendamentov2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,20 +36,16 @@ namespace Transporte.Migrations
                     b.Property<int>("IdEstudante")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdVeiculo")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("data")
                         .HasColumnType("datetime2");
 
                     b.Property<TimeSpan>("horario")
                         .HasColumnType("time");
 
+                    b.Property<int>("idVeiculo")
+                        .HasColumnType("int");
+
                     b.HasKey("id");
-
-                    b.HasIndex("IdEstudante");
-
-                    b.HasIndex("IdVeiculo");
 
                     b.ToTable("Agendamentos");
                 });
@@ -113,25 +112,6 @@ namespace Transporte.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Veiculos");
-                });
-
-            modelBuilder.Entity("Transporte.Models.Agendamento", b =>
-                {
-                    b.HasOne("Transporte.Models.Estudante", "Estudante")
-                        .WithMany()
-                        .HasForeignKey("IdEstudante")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Transporte.Models.Veiculo", "Veiculo")
-                        .WithMany()
-                        .HasForeignKey("IdVeiculo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Estudante");
-
-                    b.Navigation("Veiculo");
                 });
 #pragma warning restore 612, 618
         }

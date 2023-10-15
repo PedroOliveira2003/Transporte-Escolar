@@ -1,20 +1,23 @@
-﻿@model IEnumerable<Transporte.Models.Curso>
+﻿@model IEnumerable<Transporte.Models.Estudante>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>listar Cursos</h1>
+<h1>ESTUDANTES</h1>
 
 <p>
-    <a asp-action="Create">Adicionar</a>
+    <a asp-action="Create">ADICIONAR</a>
 </p>
 <table class="table text-white">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefone)
             </th>
             <th></th>
         </tr>
@@ -24,6 +27,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |

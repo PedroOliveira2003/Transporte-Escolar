@@ -7,11 +7,18 @@ namespace Transporte.Models
     public class Veiculo
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "ID")]
         public int id { get; set; }
-        [Required]
+
+        [Required(ErrorMessage ="NOME DO VEICULO É OBRIGATORIO")]
         [StringLength(30)]
+        [Display(Name = "NOME VEICULO")]
         public string nomeveiculo { get; set; }
-        [Required]
+
+
+        [Required(ErrorMessage ="PLACA DO VEICULO É OBRIGATORIO")]
+        [StringLength(6)]
         public string placa { get; set; }
 
     }

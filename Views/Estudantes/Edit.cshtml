@@ -1,4 +1,4 @@
-﻿@model Transporte.Models.Veiculo
+﻿@model Transporte.Models.Estudante
 
 @{
     ViewData["Title"] = "Edit";
@@ -7,7 +7,7 @@
 
 <h1>Editar</h1>
 
-<h4>Veiculo</h4>
+<h4>Estudante</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,14 +15,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="id" />
             <div class="form-group">
-                <label asp-for="nomeveiculo" class="control-label"></label>
-                <input asp-for="nomeveiculo" class="form-control" />
-                <span asp-validation-for="nomeveiculo" class="text-danger"></span>
+                <label asp-for="nome" class="control-label"></label>
+                <input asp-for="nome" class="form-control" />
+                <span asp-validation-for="nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="placa" class="control-label"></label>
-                <input asp-for="placa" class="form-control" />
-                <span asp-validation-for="placa" class="text-danger"></span>
+                <label asp-for="telefone" class="control-label"></label>
+                <input asp-for="telefone" class="form-control" />
+                <span asp-validation-for="telefone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-primary" />

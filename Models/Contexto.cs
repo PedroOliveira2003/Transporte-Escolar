@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Transporte.Models;
 
 namespace Transporte.Models
 {
@@ -9,5 +10,9 @@ namespace Transporte.Models
         public  DbSet<Curso> Cursos { get; set; }   
 
         public DbSet<Veiculo> Veiculos { get; set;}
+
+        public DbSet<Estudante> Estudantes { get; set; }
+
+        public DbSet<Agendamento> Agendamentos { get; set; }
     }
 }

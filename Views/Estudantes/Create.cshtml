@@ -1,13 +1,13 @@
-﻿@model Transporte.Models.Curso
+﻿@model Transporte.Models.Estudante
 
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Inserir</h1>
+<h1>ADICIONAR</h1>
 
-<h4>Curso</h4>
+<h4>Estudante</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,7 +19,13 @@
                 <span asp-validation-for="nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="telefone" class="control-label"></label>
+                <input asp-for="telefone" class="form-control" />
+                <span asp-validation-for="telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <br />
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
             </div>
         </form>
     </div>
