@@ -23,12 +23,12 @@ namespace Transporte.Models
         [Display(Name = "Estudante")]
         public int IdEstudante { get; set; }
         [ForeignKey("IdEstudante")]
-        public Estudante Estudante { get; set; }
+        public Estudante estudante { get; set; }
 
         [Display(Name = "Veiculo")]
         public int IdVeiculo { get; set; }
         [ForeignKey("IdVeiculo")]
-        public Veiculo Veiculo { get; set; }
+        public Veiculo veiculo { get; set; }
 
 
 

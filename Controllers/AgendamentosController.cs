@@ -21,7 +21,7 @@ namespace Transporte.Controllers
         // GET: Agendamentos
         public async Task<IActionResult> Index()
         {
-            var contexto = _context.Agendamentos.Include(a => a.Estudante).Include(a => a.Veiculo);
+            var contexto = _context.Agendamentos.Include(a => a.estudante).Include(a => a.veiculo);
             return View(await contexto.ToListAsync());
         }
 
@@ -34,8 +34,8 @@ namespace Transporte.Controllers
             }
 
             var agendamento = await _context.Agendamentos
-                .Include(a => a.Estudante)
-                .Include(a => a.Veiculo)
+                .Include(a => a.estudante)
+                .Include(a => a.veiculo)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (agendamento == null)
             {
@@ -135,8 +135,8 @@ namespace Transporte.Controllers
             }
 
             var agendamento = await _context.Agendamentos
-                .Include(a => a.Estudante)
-                .Include(a => a.Veiculo)
+                .Include(a => a.estudante)
+                .Include(a => a.veiculo)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (agendamento == null)
             {

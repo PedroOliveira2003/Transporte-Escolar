@@ -10,7 +10,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table text-white">
+<table class="table">
     <thead>
         <tr>
             <th>
@@ -20,10 +20,10 @@
                 @Html.DisplayNameFor(model => model.horario)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Estudante)
+                @Html.DisplayNameFor(model => model.estudante)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Veiculo)
+                @Html.DisplayNameFor(model => model.veiculo)
             </th>
             <th></th>
         </tr>
@@ -38,10 +38,10 @@
                 @Html.DisplayFor(modelItem => item.horario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Estudante.nome)
+                @Html.DisplayFor(modelItem => item.estudante.nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Veiculo.nomeveiculo)
+                @Html.DisplayFor(modelItem => item.veiculo.nomeveiculo)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
