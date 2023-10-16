@@ -24,6 +24,7 @@ namespace Transporte.Controllers
             var contexto = _context.Agendamentos.Include(a => a.estudante).Include(a => a.veiculo);
             return View(await contexto.ToListAsync());
         }
+         
 
         // GET: Agendamentos/Details/5
         public async Task<IActionResult> Details(int? id)
