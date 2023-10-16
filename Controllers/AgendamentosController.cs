@@ -25,6 +25,7 @@ namespace Transporte.Controllers
             return View(await contexto.ToListAsync());
         }
          
+
         // GET: Agendamentos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
